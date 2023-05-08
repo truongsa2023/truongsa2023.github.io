@@ -1,0 +1,691 @@
+﻿<krpano version="1.20.11" title="Hải trình Trường Sa, Đoàn 4, 18-23/04/2023">
+
+	<include url="skin/vtourskin.xml" />
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="false"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               maps_loadonfirstuse="false"
+	               gyro="false"
+	               gyro_keeplookingdirection="false"
+	               webvr="false"
+	               webvr_keeplookingdirection="false"
+	               webvr_prev_next_hotspots="false"
+	               autotour="false"
+	               littleplanetintro="false"
+	               followmousecontrol="false"
+	               title="true"
+	               thumbs="true"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="false"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext=""
+	               layout_width="100%"
+	               layout_maxwidth="814"
+	               controlbar_width="-24"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0x2D3E50"
+	               design_bgalpha="0.8"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.3"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+
+	<!--
+	    For an alternative skin design either change the <skin_settings> values 
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+
+	
+	<scene name="scene_01_Xuat_phat" title="01 Xuat phat" onstart="" thumburl="panos/01_Xuat_phat.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="30.0" vlookat="-10.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/01_Xuat_phat.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/01_Xuat_phat.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_02_Tren_boong" title="02 Tren boong" onstart="" thumburl="panos/02_Tren_boong.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-10.0" vlookat="-10.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/02_Tren_boong.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/02_Tren_boong.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_03_Ra_khoi" title="03 Ra khoi" onstart="" thumburl="panos/03_Ra_khoi.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-150.0" vlookat="-15.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/03_Ra_khoi.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/03_Ra_khoi.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_04_Roi_tau_ra_Sinh_Ton_Dong" title="04 Roi tau ra Sinh Ton Dong" onstart="" thumburl="panos/04_Roi_tau_ra_Sinh_Ton_Dong.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-40.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/04_Roi_tau_ra_Sinh_Ton_Dong.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/04_Roi_tau_ra_Sinh_Ton_Dong.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_05_Tren_tau_ra_Sinh_Ton_Dong" title="05 Tren tau ra Sinh Ton Dong" onstart="" thumburl="panos/05_Tren_tau_ra_Sinh_Ton_Dong.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="30.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/05_Tren_tau_ra_Sinh_Ton_Dong.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/05_Tren_tau_ra_Sinh_Ton_Dong.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_06_Cap_cang_Sinh_Ton_Dong" title="06 Cap cang Sinh Ton Dong" onstart="" thumburl="panos/06_Cap_cang_Sinh_Ton_Dong.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/06_Cap_cang_Sinh_Ton_Dong.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/06_Cap_cang_Sinh_Ton_Dong.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_07_Cong_chao_Sinh_Ton_Dong" title="07 Cong chao Sinh Ton Dong" onstart="" thumburl="panos/07_Cong_chao_Sinh_Ton_Dong.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/07_Cong_chao_Sinh_Ton_Dong.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/07_Cong_chao_Sinh_Ton_Dong.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_08_Chua_tren_dao_Sinh_Ton_Dong" title="08 Chua tren dao Sinh Ton Dong" onstart="" thumburl="panos/08_Chua_tren_dao_Sinh_Ton_Dong.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="60.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/08_Chua_tren_dao_Sinh_Ton_Dong.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/08_Chua_tren_dao_Sinh_Ton_Dong.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_09_Giao_luu_CBCS_Sinh_Ton_Dong" title="09 Giao luu CBCS Sinh Ton Dong" onstart="" thumburl="panos/09_Giao_luu_CBCS_Sinh_Ton_Dong.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="35.0" vlookat="10.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/09_Giao_luu_CBCS_Sinh_Ton_Dong.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/09_Giao_luu_CBCS_Sinh_Ton_Dong.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_10_Cot_moc_chu_quyen_Sinh_Ton_Dong" title="10 Cot moc chu quyen Sinh Ton Dong" onstart="" thumburl="panos/10_Cot_moc_chu_quyen_Sinh_Ton_Dong.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/10_Cot_moc_chu_quyen_Sinh_Ton_Dong.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/10_Cot_moc_chu_quyen_Sinh_Ton_Dong.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_11_Roi_tau_ra_Len_Dao" title="11 Roi tau ra Len Dao" onstart="" thumburl="panos/11_Roi_tau_ra_Len_Dao.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/11_Roi_tau_ra_Len_Dao.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/11_Roi_tau_ra_Len_Dao.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_12_Tren_tau_ra_Len_Dao" title="12 Tren tau ra Len Dao" onstart="" thumburl="panos/12_Tren_tau_ra_Len_Dao.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/12_Tren_tau_ra_Len_Dao.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/12_Tren_tau_ra_Len_Dao.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_13_Cap_cang_Len_Dao" title="13 Cap cang Len Dao" onstart="" thumburl="panos/13_Cap_cang_Len_Dao.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="5.0" vlookat="-20.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/13_Cap_cang_Len_Dao.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/13_Cap_cang_Len_Dao.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_14_Tren_dao_Len_Dao_01" title="14 Tren dao Len Dao 01" onstart="" thumburl="panos/14_Tren_dao_Len_Dao_01.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-80.0" vlookat="-10.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/14_Tren_dao_Len_Dao_01.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/14_Tren_dao_Len_Dao_01.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_15_Tren_dao_Len_Dao_02" title="15 Tren dao Len Dao 02" onstart="" thumburl="panos/15_Tren_dao_Len_Dao_02.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="90.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/15_Tren_dao_Len_Dao_02.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/15_Tren_dao_Len_Dao_02.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_16_Le_tuong_niem_Gac_Ma" title="16 Le tuong niem Gac Ma" onstart="" thumburl="panos/16_Le_tuong_niem_Gac_Ma.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/16_Le_tuong_niem_Gac_Ma.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/16_Le_tuong_niem_Gac_Ma.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_17_Roi_tau_ra_Da_Tay_B" title="17 Roi tau ra Da Tay B" onstart="" thumburl="panos/17_Roi_tau_ra_Da_Tay_B.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/17_Roi_tau_ra_Da_Tay_B.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/17_Roi_tau_ra_Da_Tay_B.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_18_Tren_tau_ra_Da_Tay_B_01" title="18 Tren tau ra Da Tay B 01" onstart="" thumburl="panos/18_Tren_tau_ra_Da_Tay_B_01.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/18_Tren_tau_ra_Da_Tay_B_01.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/18_Tren_tau_ra_Da_Tay_B_01.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_19_Tren_tau_ra_Da_Tay_B_02" title="19 Tren tau ra Da Tay B 02" onstart="" thumburl="panos/19_Tren_tau_ra_Da_Tay_B_02.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/19_Tren_tau_ra_Da_Tay_B_02.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/19_Tren_tau_ra_Da_Tay_B_02.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_20_Cap_cang_Da_Tay_B" title="20 Cap cang Da Tay B" onstart="" thumburl="panos/20_Cap_cang_Da_Tay_B.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-20.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/20_Cap_cang_Da_Tay_B.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/20_Cap_cang_Da_Tay_B.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_21_Tren_dao_Da_Tay_B_01" title="21 Tren dao Da Tay B 01" onstart="" thumburl="panos/21_Tren_dao_Da_Tay_B_01.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-2.0" vlookat="-15.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/21_Tren_dao_Da_Tay_B_01.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/21_Tren_dao_Da_Tay_B_01.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_22_Tren_dao_Da_Tay_B_02" title="22 Tren dao Da Tay B 02" onstart="" thumburl="panos/22_Tren_dao_Da_Tay_B_02.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-40.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/22_Tren_dao_Da_Tay_B_02.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/22_Tren_dao_Da_Tay_B_02.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_23_Dao_Truong_Sa_Lon_nhin_tu_mui_tau" title="23 Dao Truong Sa Lon nhin tu mui tau" onstart="" thumburl="panos/23_Dao_Truong_Sa_Lon_nhin_tu_mui_tau.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-50.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/23_Dao_Truong_Sa_Lon_nhin_tu_mui_tau.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/23_Dao_Truong_Sa_Lon_nhin_tu_mui_tau.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_24_Dao_Truong_Sa_Lon_nhin_tu_buong_lai" title="24 Dao Truong Sa Lon nhin tu buong lai" onstart="" thumburl="panos/24_Dao_Truong_Sa_Lon_nhin_tu_buong_lai.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/24_Dao_Truong_Sa_Lon_nhin_tu_buong_lai.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/24_Dao_Truong_Sa_Lon_nhin_tu_buong_lai.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_25_Cap_cang_Truong_Sa_Lon" title="25 Cap cang Truong Sa Lon" onstart="" thumburl="panos/25_Cap_cang_Truong_Sa_Lon.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="75.0" vlookat="-10.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/25_Cap_cang_Truong_Sa_Lon.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/25_Cap_cang_Truong_Sa_Lon.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_26_Cong_chao_Truong_Sa_Lon_01" title="26 Cong chao Truong Sa Lon 01" onstart="" thumburl="panos/26_Cong_chao_Truong_Sa_Lon_01.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-60.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/26_Cong_chao_Truong_Sa_Lon_01.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/26_Cong_chao_Truong_Sa_Lon_01.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_27_Cong_chao_Truong_Sa_Lon_02" title="27 Cong chao Truong Sa Lon 02" onstart="" thumburl="panos/27_Cong_chao_Truong_Sa_Lon_02.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="30.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/27_Cong_chao_Truong_Sa_Lon_02.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/27_Cong_chao_Truong_Sa_Lon_02.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_28_Cong_chao_Truong_Sa_Lon_03" title="28 Cong chao Truong Sa Lon 03" onstart="" thumburl="panos/28_Cong_chao_Truong_Sa_Lon_03.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="170.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/28_Cong_chao_Truong_Sa_Lon_03.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/28_Cong_chao_Truong_Sa_Lon_03.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_29_Le_chao_co_tren_Truong_Sa_Lon_01" title="29 Le chao co tren Truong Sa Lon 01" onstart="" thumburl="panos/29_Le_chao_co_tren_Truong_Sa_Lon_01.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-50.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/29_Le_chao_co_tren_Truong_Sa_Lon_01.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/29_Le_chao_co_tren_Truong_Sa_Lon_01.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_30_Le_chao_co_tren_Truong_Sa_Lon_02" title="30 Le chao co tren Truong Sa Lon 02" onstart="" thumburl="panos/30_Le_chao_co_tren_Truong_Sa_Lon_02.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/30_Le_chao_co_tren_Truong_Sa_Lon_02.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/30_Le_chao_co_tren_Truong_Sa_Lon_02.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_31_Nha_tuong_niem_tren_Truong_Sa_Lon" title="31 Nha tuong niem tren Truong Sa Lon" onstart="" thumburl="panos/31_Nha_tuong_niem_tren_Truong_Sa_Lon.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="3.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/31_Nha_tuong_niem_tren_Truong_Sa_Lon.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/31_Nha_tuong_niem_tren_Truong_Sa_Lon.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_32_Bia_tuong_niem_tren_Truong_Sa_Lon" title="32 Bia tuong niem tren Truong Sa Lon" onstart="" thumburl="panos/32_Bia_tuong_niem_tren_Truong_Sa_Lon.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="-10.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/32_Bia_tuong_niem_tren_Truong_Sa_Lon.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/32_Bia_tuong_niem_tren_Truong_Sa_Lon.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_33_Cong_chua_Truong_Sa_Lon" title="33 Cong chua Truong Sa Lon" onstart="" thumburl="panos/33_Cong_chua_Truong_Sa_Lon.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/33_Cong_chua_Truong_Sa_Lon.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/33_Cong_chua_Truong_Sa_Lon.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_34_Lam_le_ben_trong_chua_01" title="34 Lam le ben trong chua 01" onstart="" thumburl="panos/34_Lam_le_ben_trong_chua_01.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="90.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/34_Lam_le_ben_trong_chua_01.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/34_Lam_le_ben_trong_chua_01.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_35_Lam_le_ben_trong_chua_02" title="35 Lam le ben trong chua 02" onstart="" thumburl="panos/35_Lam_le_ben_trong_chua_02.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="30.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/35_Lam_le_ben_trong_chua_02.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/35_Lam_le_ben_trong_chua_02.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_36_Lam_le_ben_trong_chua_03" title="36 Lam le ben trong chua 03" onstart="" thumburl="panos/36_Lam_le_ben_trong_chua_03.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-30.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/36_Lam_le_ben_trong_chua_03.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/36_Lam_le_ben_trong_chua_03.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_37_Nha_ga_hang_khong_Truong_Sa_Lon" title="37 Nha ga hang khong Truong Sa Lon" onstart="" thumburl="panos/37_Cang_hang_khong_Truong_Sa_Lon.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/37_Cang_hang_khong_Truong_Sa_Lon.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/37_Cang_hang_khong_Truong_Sa_Lon.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_38_Cot_moc_chu_quyen_Truong_Sa_Lon" title="38 Cot moc chu quyen Truong Sa Lon" onstart="" thumburl="panos/38_Cot_moc_chu_quyen_Truong_Sa_Lon.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/38_Cot_moc_chu_quyen_Truong_Sa_Lon.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/38_Cot_moc_chu_quyen_Truong_Sa_Lon.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_39_Nha_gian_DKI-16_nhin_tu_boong_tau" title="39 Nha gian DKI-16 nhin tu boong tau" onstart="" thumburl="panos/39_Nha_gian_DKI-16_nhin_tu_boong_tau.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-50.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/39_Nha_gian_DKI-16_nhin_tu_boong_tau.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/39_Nha_gian_DKI-16_nhin_tu_boong_tau.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_40_Roi_tau_ra_Nha_gian_DKI-16" title="40 Roi tau ra Nha gian DKI-16" onstart="" thumburl="panos/40_Roi_tau_ra_Nha_gian_DKI-16.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/40_Roi_tau_ra_Nha_gian_DKI-16.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/40_Roi_tau_ra_Nha_gian_DKI-16.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_41_Tren_tau_ra_Nha_gian_DKI-16" title="41 Tren tau ra Nha gian DKI-16" onstart="" thumburl="panos/41_Tren_tau_ra_Nha_gian_DKI-16.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="-10.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/41_Tren_tau_ra_Nha_gian_DKI-16.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/41_Tren_tau_ra_Nha_gian_DKI-16.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_42_Tang_1_Nha_gian_DKI-16" title="42 Tang 1 Nha gian DKI-16" onstart="" thumburl="panos/42_Tang_1_Nha_gian_DKI-16.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-85.0" vlookat="10.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/42_Tang_1_Nha_gian_DKI-16.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/42_Tang_1_Nha_gian_DKI-16.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_43_Nha_gian_DKI-16_01" title="43 Nha gian DKI-16 01" onstart="" thumburl="panos/43_Nha_gian_DKI-16_01.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/43_Nha_gian_DKI-16_01.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/43_Nha_gian_DKI-16_01.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_44_Nha_gian_DKI-16_02" title="44 Nha gian DKI-16 02" onstart="" thumburl="panos/44_Nha_gian_DKI-16_02.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="30.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/44_Nha_gian_DKI-16_02.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/44_Nha_gian_DKI-16_02.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+
+
+</krpano>
