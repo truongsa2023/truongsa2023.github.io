@@ -3,9 +3,10 @@
 	<include url="skin/vtourskin.xml" />
 
 	<autorotate enabled="true"
-				waittime="0.0"
-				accel="3.0"
+				waittime="3.0"
+				accel="1.5"
 				speed="3.0"
+				tofov="120.0"
 	/>
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
