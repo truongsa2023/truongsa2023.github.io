@@ -88,17 +88,6 @@
 		<image>
 			<cube url="panos/01_Xuat_phat.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		
-		<hotspot name="spot1" style="hotspot_ani_white" ath="65" atv="0" 
-		         onclick="loadscene(scene_02_Tren_boong,null,MERGE,BLEND(1));
-		                  set(view.architectural,1.0);
-		                  wait(BLEND);
-		                  tween(view.architectural,0.0,2.0);
-		                  oninterrupt( tween(view.architectural,0.0,0.5) );
-						  set(hotspot[spot2].effect, '');
-		                  "
-		         />	
-		
 
 	</scene>
 
