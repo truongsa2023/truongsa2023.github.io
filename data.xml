@@ -1,0 +1,260 @@
+<krpano>
+
+	<!-- dữ liệu chuyển ngữ anh việt -->
+	<strings name="english"
+		rotateButtonOn = "Auto-rotation on"
+		rotateButtonOff = "Auto-rotation off"
+		bgaudioButtonOn = "Sound on"
+		bgaudioButtonOff = "Sound off"
+		fullsrButtonOff = "Full screen"
+		fullsrButtonOn = "Exit full screen"
+		menuoffButton = "Hide menu"
+		mapButtonOff = "Hide floorplan"
+		mapButtonOn = "Show floorplan"
+		infoButtonOff = "Hide introduction"
+		infoButtonOn = "Show introduction"
+		thumbButtonOff = "Hide scene gallery"
+		thumbButtonOn = "Show scene gallery"
+		autoPlayButton = "Auto-play"
+		menu1 = "Menu buffet"
+		video1 = "Click to Paused/Unpaused"
+		madebytext = "Made by 360PRO.VN and VTCE"
+		titles1 = "[b]Asia Hotel[/b]"
+		s1a1 = "Entrance"
+		texts1a1 = "[b][i]Warmly welcome to Asia Hotel[/i][/b][br/]
+					Asia Hotel located in the center of the city, it is 01 km far from Hoan Kiem lake and takes only 7 minutes to walk to the Lake. The hotel has 60 international standard rooms with good furnishment.[br/]
+					Asia Hotel is situated near the tourist attraction places, entertainment centers, and luxurious shopping malls such as  Vincom, Trang Tien Plaza, Ruby Plaza…. The location of Asia Hotel is very convenient for tourism, relaxation or business trips.[br/][br/]
+					Contact us:[br/]
+					- Address: 23 Nguyen Cong Tru Street, Hai Ba Trung District, Hanoi City, Vietnam.[br/]
+					- Phone: (84-4) 38212045.[br/]
+					- Hotline:0979.40.42.42.
+					"
+		tickerscene01 = "Virtual tour hải trình Trường Sa, Đoàn công tác số 4, từ ngày 18-23.04.2023. Đoàn công tác gồm 284 người, khởi hành từ cảng Cam Ranh, Khanh Hòa đến thăm 04 đảo gồm Sinh Tồn Đông, Len Đao, Đá Tây B, Trường Sa Lớn và Nhà giàn DKI-16. Trong đó, đoàn kiều bào gồm 47 người đến từ 22 quốc gia và vùng lãnh thổ. Virtual tour Hải trình Trường Sa được thực hiện bởi đoàn Hàn Quốc. Seoul, Summer 2023. "
+		titles2 = "[b]Asia Hotel[/b]"
+		s2a1 = "Reception hall"
+		texts2a1 = "When coming to Asia Hotel, you will feel the warmth and the familiar like your home by the professional service and experienced working staff.
+					"
+		tickerscene02 = "When coming to Asia Hotel, you will feel the warmth and the familiar like your home by the professional service and experienced working staff. "
+		titles3 = "[b]Souvenirs[/b]"
+		s3a1 = "Souvenirs"
+		texts3a1 = "At the souvenir booths, customers can buy jewelry items are manufactured by artisans working jeweler famous or souvenir items characterized the culture of Hanoi, Vietnam.
+					"
+		tickertexts3a1 = "At the souvenir booths, customers can buy jewelry items are manufactured by artisans working jeweler famous or souvenir items characterized the culture of Hanoi, Vietnam."
+		titles4 = "[b]Conference room[/b]"
+		s4a1 = "Conference lobby"
+		s4a2 = "Common arrangement"
+		s4a3 = "U-sharp arrangement"
+		texts4a1 = "The multi function conference room which has the capacity of 60 – 70 guests can meet every requirement.[br/][br/]
+					Service:[br/]
+					- Projector.[br/]
+					- Sound and light system.[br/]
+					- 03 wireless microphone, 01 wire microphone.[br/]
+					- Flowers, conference tables (02 front tables).[br/]
+					- Backdrop, banner.[br/]
+					- Free wifi.[br/][br/]
+					Supplement service:[br/]
+					- Tea break.[br/]
+					- Buffet party – reasonable price.[br/][br/]
+					[i]Contact us: (84-4) 38212045.[/i]
+					"
+		tickertexts4a1 = "The multi function conference room which has the capacity of 60 – 70 guests can meet every requirement. Service: Projector, Sound and light system, 03 wireless microphone, 01 wire microphone, Flowers, conference tables (02 front tables), Backdrop, banner, Free wifi. Supplement service: Tea break, Buffet party – reasonable price. Contact us: (84-4) 38212045."
+		titles5 = "[b]Asia restaurant[/b]"
+		s5a1 = "Common arrangement"
+		s5a2 = "Buffet arrangement"
+		texts5a1 = "Asia Restaurant accommodating 150-180 guests with cozy interior design,oriental elegance, clean and professional service will surely bring satisfaction to customers.[br/][br/]
+					Asia Restaurant, the combination between European and Vietnamese cuisine, the dishes by the hands of talented chefs, will give you a new taste with diversified menus.[br/][br/]
+					Asia Restaurant is always ready to serve meal at rooms, from Quick meal for busy officers to private romantic dinner for the couples.[br/][br/]
+					[i]Contact us: (84-4) 38212045.[/i]
+					"
+		tickertexts5a1 = "Asia Restaurant accommodating 150-180 guests with cozy interior design,oriental elegance, clean and professional service will surely bring satisfaction to customers.	Asia Restaurant, the combination between European and Vietnamese cuisine, the dishes by the hands of talented chefs, will give you a new taste with diversified menus. Asia Restaurant is always ready to serve meal at rooms, from Quick meal for busy officers to private romantic dinner for the couples. Contact us: (84-4) 38212045."
+		titles6 = "[b]Corridor[/b]"
+		s6a1 = "Corridor"
+		texts6a1 = "The corridor is designed spacious. Connected to the elevator and the staircase is open space - where guests can stay in comfort while waiting for relatives.
+						"
+		tickertexts6a1 = "The corridor is designed spacious. Connected to the elevator and the staircase is open space - where guests can stay in comfort while waiting for relatives."
+		titles7 = "[b]Standard room[/b]"
+		s7a1 = "Standard room"
+		s7a2 = "Restroom"
+		texts7a1 = "Standard room: 23m2.[br/]
+					- Standard rooms are designed to bring the customers with convenience and close. Customers will be feel as comfortable as their own home.[br/]
+					- Smart door key lock system with sensor.[br/]
+					- Windows over view city.[br/]
+					- In-room wooden furniture: Made from rare, precious wood.[br/]
+					- Front, bathroom doors: Inlaid and carved by hand. Wooden flooring.[br/]
+					- In-room broad band internet access.[br/]
+					- International direct dial telephone.[br/]
+					[i]Contact us: (84-4) 38212045.[/i]
+					"
+		tickertexts7a1 = "Standard room: 23m2. Standard rooms are designed to bring the customers with convenience and close. Customers will be feel as comfortable as their own home. Smart door key lock system with sensor. Windows over view city. In-room wooden furniture: Made from rare, precious wood. Front, bathroom doors: Inlaid and carved by hand. Wooden flooring. In-room broad band internet access. International direct dial telephone. Contact us: (84-4) 38212045."
+		titles8 = "[b]Superior room[/b]"
+		s8a1 = "Superior room"
+		s8a2 = "Restroom"
+		texts8a1 = "Superior room: 28m2.[br/]
+					- Superior room is convenient with smart sensor  lock. The area is suitable for vacations and business trips.[br/]
+					- Windows over view city.[br/]
+					- In-room wooden furniture: Made from rare, precious wood.[br/]
+					- Front, bathroom doors: Inlaid and carved by hand. Wooden flooring.[br/]
+					- In-room broad band internet access.[br/]
+					- International direct dial telephone.[br/]
+					[i]Contact us: (84-4) 38212045.[/i]
+					"
+		tickertexts8a1 = "Superior room: 28m2. Superior room is convenient with smart sensor  lock. The area is suitable for vacations and business trips. Windows over view city. In-room wooden furniture: Made from rare, precious wood. Front, bathroom doors: Inlaid and carved by hand. Wooden flooring. In-room broad band internet access. International direct dial telephone. Contact us: (84-4) 38212045."
+		titles9 = "[b]Suite room[/b]"
+		s9a1 = "Sitting room"
+		s9a2 = "Bedroom"
+		s9a3 = "Relax room"
+		s9a4 = "Restroom"
+		texts9a1 = "Suite room includes sitting room with a large desk and 6 chairs (33m2), bedroom and relax room (27m2).[br/]
+					- Smart door key lock system with sensor.[br/]
+					- Suite rooms have private balcony to view the city at night or enjoy the romantic dinner.[br/]
+					- Suite rooms are designed with antique pictures. Furniture is made of rare and luxurious wood and carved skillfully by hand.[br/]
+					- In-room wooden furniture: Made from rare, precious wood.[br/]
+					- Front, bathroom doors: Inlaid and carved by hand. Wooden flooring.[br/]
+					- In-room broad band internet access.[br/]
+					- International direct dial telephone.[br/]
+					[i]Contact us: (84-4) 38212045.[/i]
+					"
+		tickertexts9a1 = "Suite room includes sitting room with a large desk and 6 chairs (33m2), bedroom and relax room (27m2). Smart door key lock system with sensor. Suite rooms have private balcony to view the city at night or enjoy the romantic dinner. Suite rooms are designed with antique pictures. Furniture is made of rare and luxurious wood and carved skillfully by hand. In-room wooden furniture: Made from rare, precious wood. Front, bathroom doors: Inlaid and carved by hand. Wooden flooring. In-room broad band internet access. International direct dial telephone. Contact us: (84-4) 38212045."
+		titles10 = "[b]Gym[/b]"
+		s10a1 = "Gym"
+		texts10a1 = "A wonderful place that allows you to pick and choose from a variety of fitness activities."
+		tickertexts10a1 = "A wonderful place that allows you to pick and choose from a variety of fitness activities."
+		group1 = "ENTRANCE"
+		group2 = "RECEPTION HALL"
+		group3 = "SOUVENIRS"
+		group4 = "CONFERENCE ROOM"
+		group5 = "ASIA RESTAURANT"
+		group6 = "CORRIDOR"
+		group7 = "STANDARD ROOM"
+		group8 = "SUPERIOR ROOM"
+		group9 = "SUITE ROOM"
+		group10 = "GYM"
+	/>
+	
+	<strings name="vietnamese"
+		rotateButtonOn = "Xoay ảnh"
+		rotateButtonOff = "Ngừng xoay"
+		bgaudioButtonOn = "Bật nhạc"
+		bgaudioButtonOff = "Tắt nhạc"
+		fullsrButtonOff = "Xem toàn màn hình"
+		fullsrButtonOn = "Thu nhỏ màn hình"
+		menuoffButton = "Ẩn menu"
+		mapButtonOff = "Ẩn sơ đồ mặt bằng"
+		mapButtonOn = "Xem sơ đồ mặt bằng"
+		infoButtonOff = "Ẩn thông tin giới thiệu"
+		infoButtonOn = "Xem thông tin giới thiệu"
+		thumbButtonOff = "Ẩn thư viện cảnh"
+		thumbButtonOn = "Xem thư viện cảnh"
+		autoPlayButton = "Trình chiếu tự động"
+		menu1 = "Thực đơn buffet"
+		video1 = "Click để bật/tạm dừng video"
+		madebytext = "Thực hiện bởi 360PRO.VN và VTCE"
+		titles1 = "[b]Khách sạn Á Châu[/b]"
+		s1a1 = "Cổng chính"
+		texts1a1 = "[b][i]Chào mừng quý khách đến với khách sạn Á Châu[/i][/b][br/]
+					Khách sạn Á Châu tọa lạc ngay trung tâm thành phố Hà Nội, cách Hồ Hoàn Kiếm 01km – 07 phút đi bộ, với 60 phòng ngủ tiện nghi đạt tiêu chuẩn quốc tế.[br/]
+					Khách sạn nằm cạnh các điểm thu hút khách du lịch, trung tâm vui chơi mua sắm và khu thương mại cao cấp như Vincom, Tràng Tiền Plaza, Ruby Plaza... Vị trí của Khách sạn Á Châu thực sự thuận tiện cho du khách đến thăm quan, nghỉ dưỡng hay đến công tác.[br/][br/]
+					Thông tin liên hệ:[br/]
+					- Address: Địa chỉ: 23 Nguyễn Công Trứ, Quận Hai Bà Trưng, Hà Nội, Việt Nam.[br/]
+					- Điện thoại: (84-4) 38212045.[br/]
+					- Hotline:0979.40.42.42.
+					"
+		tickerscene01 = "Virtual tour hải trình Trường Sa, Đoàn công tác số 4, từ ngày 18-23.04.2023. Đoàn công tác gồm 284 người, khởi hành từ cảng Cam Ranh, Khanh Hòa đến thăm 04 đảo gồm Sinh Tồn Đông, Len Đao, Đá Tây B, Trường Sa Lớn và Nhà giàn DKI-16. Trong đó, đoàn kiều bào gồm 47 người đến từ 22 quốc gia và vùng lãnh thổ. Virtual tour Hải trình Trường Sa được thực hiện bởi đoàn Hàn Quốc. Seoul, Summer 2023.  "
+		titles2 = "[b]Khách sạn Á Châu[/b]"
+		s2a1 = "Sảnh tiếp tân"
+		texts2a1 = "Đến với Khách sạn Á Châu, quý khách sẽ cảm nhận được sự thân thuộc và ấm áp như chính ngôi nhà mình bởi phong cách phục vụ chuyên nghiệp và thái độ chăm sóc tận tình của đội ngũ nhân viên khách sạn giàu kinh nghiệm.
+					"
+		tickerscene02 = "Nội dung text cho scene 02.  "
+		titles3 = "[b]Quầy lưu niệm[/b]"
+		s3a1 = "Quầy lưu niệm"
+		texts3a1 = "Tại gian hàng lưu niệm, khách hàng có thể tìm mua các mặt hàng trang sức được tác chế bởi những nghệ nhân kim hoàn có tiếng hoặc những món đồ lưu niệm mang đậm chất văn hóa của Hà Nội, Việt Nam.
+					"
+		tickertexts3a1 = "Tại gian hàng lưu niệm, khách hàng có thể tìm mua các mặt hàng trang sức được tác chế bởi những nghệ nhân kim hoàn có tiếng hoặc những món đồ lưu niệm mang đậm chất văn hóa của Hà Nội, Việt Nam."
+		titles4 = "[b]Phòng hội thảo[/b]"
+		s4a1 = "Hành lang hội thảo"
+		s4a2 = "Phòng hội thảo"
+		s4a3 = "Phòng hội thảo chữ U"
+		texts4a1 = "Phòng hội nghị có sức chứa 60-70 khách có thể được bố trí và sắp xếp đa chức năng tùy theo yêu cầu của quý khách.[br/][br/]
+					Dịch vụ hội nghị gồm:[br/]
+					- Máy chiếu.[br/]
+					- Hệ thống âm thanh, ánh sáng.[br/]
+					- 03 micro không dây và 01 micro cố định.[br/]
+					- Hoa trang trí bục phát biểu, bàn hội nghị (02 dãy bàn đầu).[br/]
+					- Backdrop phòng họp và 01 bandrol treo trước khách sạn.[br/]
+					- Internet Wifi miễn phí.[br/][br/]
+					Dịch vụ hội nghị bổ sung:[br/]
+					- Ăn giữa giờ (teabreak).[br/]
+					- Dịch vụ tiệc buffet, thực đơn tự chọn giá cả hợp lý.[br/][br/]
+					[i]Liên hệ: (84-4) 38212045.[/i]
+					"
+		tickertexts4a1 = "Phòng hội nghị có sức chứa 60-70 khách có thể được bố trí và sắp xếp đa chức năng tùy theo yêu cầu của quý khách.	Dịch vụ hội nghị gồm: Máy chiếu, Hệ thống âm thanh, ánh sáng, 03 micro không dây và 01 micro cố định, Hoa trang trí bục phát biểu, bàn hội nghị (02 dãy bàn đầu), Backdrop phòng họp và 01 bandrol treo trước khách sạn, Internet Wifi miễn phí. Dịch vụ hội nghị bổ sung: Ăn giữa giờ (teabreak), Dịch vụ tiệc buffet, thực đơn tự chọn giá cả hợp lý. Liên hệ: (84-4) 38212045."
+		titles5 = "[b]Nhà hàng Á Châu[/b]"
+		s5a1 = "Nhà hàng"
+		s5a2 = "Buffet"
+		texts5a1 = "Nhà hàng có khả năng phục vụ cùng lúc 150-180 thực khách với các món ăn Âu - Á, với thực đơn phong phú sẽ đem đến hương vị mới cho Quý khách.[br/][br/]
+					Nhà hàng là  nơi lý tưởng cho các dịp như họp, hội thảo, hội nghị, đám cưới, sinh nhật, tiệc, và lễ kỉ niệm khác.[br/][br/]
+					[i]Liên hệ: (84-4) 38212045.[/i]
+					"
+		tickertexts5a1 = "Nhà hàng có khả năng phục vụ cùng lúc 150-180 thực khách với các món ăn Âu - Á, với thực đơn phong phú sẽ đem đến hương vị mới cho Quý khách.	Nhà hàng là  nơi lý tưởng cho các dịp như họp, hội thảo, hội nghị, đám cưới, sinh nhật, tiệc, và lễ kỉ niệm khác. Liên hệ: (84-4) 38212045."
+		titles6 = "[b]Hành lang[/b]"
+		s6a1 = "Hành lang"
+		texts6a1 = "Hành lang được thiết kế rộng rãi. Nối với cầu thang máy và cầu thang bộ là không gian mở - nơi khách có thể nghỉ chân thoải mái trong lúc đợi người thân.
+						"
+		tickertexts6a1 = "Hành lang được thiết kế rộng rãi. Nối với cầu thang máy và cầu thang bộ là không gian mở - nơi khách có thể nghỉ chân thoải mái trong lúc đợi người thân."
+		titles7 = "[b]Phòng Standard[/b]"
+		s7a1 = "Phòng Standard"
+		s7a2 = "WC"
+		texts7a1 = "Phòng Standard, diện tích phòng: 23m2.[br/]
+					- Phòng Standard tiện nghi được thiết kế theo phương châm mang lại sự thoái mái và tạo sự thân thiện cho khách hàng. [br/]
+					- Các phòng Standard đều có cửa sổ nhìn ra ngoài thành phố.[br/]
+					- Hệ thống khóa cửa thông minh, cảm biến.[br/]
+					- Bàn, ghế, giường, tủ  làm bằng gỗ gụ - loại gỗ quý hiếm Việt Nam – trạm khắc bằng tay. Đặc biệt các cánh cửa phòng Standard là tác phẩm nghệ thuật tinh xảo được trạm khắc bởi các  nghệ nhân làng nghề truyền thống.[br/]
+					- Internet cáp quang, đường truyền cao và internet không dây wifi miễn phí trong phòng.[br/]
+					- Điện thoại gọi trực tiếp nước ngoài.[br/]
+					[i]Liên hệ: (84-4) 38212045.[/i]
+					"
+		tickertexts7a1 = "Phòng Standard, diện tích phòng: 23m2. Phòng Standard tiện nghi được thiết kế theo phương châm mang lại sự thoái mái và tạo sự thân thiện cho khách hàng. Các phòng Standard đều có cửa sổ nhìn ra ngoài thành phố. Hệ thống khóa cửa thông minh, cảm biến. Bàn, ghế, giường, tủ  làm bằng gỗ gụ - loại gỗ quý hiếm Việt Nam – trạm khắc bằng tay. Đặc biệt các cánh cửa phòng Standard là tác phẩm nghệ thuật tinh xảo được trạm khắc bởi các  nghệ nhân làng nghề truyền thống. Internet cáp quang, đường truyền cao và internet không dây wifi miễn phí trong phòng. Điện thoại gọi trực tiếp nước ngoài. Liên hệ: (84-4) 38212045."
+		titles8 = "[b]Phòng Superior[/b]"
+		s8a1 = "Phòng Superior"
+		s8a2 = "WC"
+		texts8a1 = "Phòng Superior, diện tích phòng: 28m2.[br/]
+					- Phòng Superior tiện nghi được thiết kế theo phương châm mang lại sự thoái mái và tạo sự thân thiện cho khách hàng. [br/]
+					- Các phòng Superior đều có cửa sổ nhìn ra ngoài thành phố.[br/]
+					- Hệ thống khóa cửa thông minh, cảm biến.[br/]
+					- Bàn, ghế, giường, tủ  làm bằng gỗ gụ - loại gỗ quý hiếm Việt Nam – trạm khắc bằng tay. Đặc biệt các cánh cửa phòng Superior là tác phẩm nghệ thuật tinh xảo được trạm khắc bởi các  nghệ nhân làng nghề truyền thống.[br/]
+					- Internet cáp quang, đường truyền cao và internet không dây wifi miễn phí trong phòng.[br/]
+					- Điện thoại gọi trực tiếp nước ngoài.[br/]
+					[i]Liên hệ: (84-4) 38212045.[/i]
+					"
+		tickertexts8a1 = "Phòng Superior, diện tích phòng: 28m2. Phòng Superior tiện nghi được thiết kế theo phương châm mang lại sự thoái mái và tạo sự thân thiện cho khách hàng. Các phòng Superior đều có cửa sổ nhìn ra ngoài thành phố. Hệ thống khóa cửa thông minh, cảm biến. Bàn, ghế, giường, tủ  làm bằng gỗ gụ - loại gỗ quý hiếm Việt Nam – trạm khắc bằng tay. Đặc biệt các cánh cửa phòng Superior là tác phẩm nghệ thuật tinh xảo được trạm khắc bởi các  nghệ nhân làng nghề truyền thống. Internet cáp quang, đường truyền cao và internet không dây wifi miễn phí trong phòng. Điện thoại gọi trực tiếp nước ngoài. Liên hệ: (84-4) 38212045."
+		titles9 = "[b]Phòng Suite[/b]"
+		s9a1 = "Phòng tiếp khách"
+		s9a2 = "Phòng ngủ"
+		s9a3 = "Phòng uống trà"
+		s9a4 = "WC"
+		texts9a1 = "Hệ thống phòng Suite bao gồm: 01 phòng làm việc 33m2 với bàn làm việc lớn và 6 ghế tiếp khách. 01 phòng ngủ 27m2.[br/]
+					- Khóa cửa phòng Suite là hệ thống khóa thông minh cảm biến.[br/]
+					- Các phòng Suite đều có cửa sổ nhìn ra ngoài; ban công riêng biệt để có thể ngắm toàn cảnh thành phố về đêm hay quý khách có thể ngồi thư giãn thưởng trà hoặc thưởng thức bữa tối lãng mạn bên người thân.[br/]
+					- Phòng Suite được thiết kế tinh tế với tranh cổ treo tường, nội thất được làm bằng gỗ gụ quý hiếm trạm khắc tinh xảo bằng tay bởi các nghệ nhân nổi tiếng làng nghề truyền thống.[br/]
+					- Internet cáp quang, đường truyền cao và internet không dây wifi miễn phí trong phòng.[br/]
+					- Điện thoại gọi trực tiếp nước ngoài.[br/]
+					[i]Liên hệ: (84-4) 38212045.[/i]
+					"
+		tickertexts9a1 = "Hệ thống phòng Suite bao gồm: 01 phòng làm việc 33m2 với bàn làm việc lớn và 6 ghế tiếp khách. 01 phòng ngủ 27m2. Khóa cửa phòng Suite là hệ thống khóa thông minh cảm biến. Các phòng Suite đều có cửa sổ nhìn ra ngoài; ban công riêng biệt để có thể ngắm toàn cảnh thành phố về đêm hay quý khách có thể ngồi thư giãn thưởng trà hoặc thưởng thức bữa tối lãng mạn bên người thân. Phòng Suite được thiết kế tinh tế với tranh cổ treo tường, nội thất được làm bằng gỗ gụ quý hiếm trạm khắc tinh xảo bằng tay bởi các nghệ nhân nổi tiếng làng nghề truyền thống. Điện thoại gọi trực tiếp nước ngoài. Liên hệ: (84-4) 38212045."
+		titles10 = "[b]Phòng Gym[/b]"
+		s10a1 = "Phòng Gym"
+		texts10a1 = "Với tiêu chí An toàn - Hiệu quả - Thân thiện - Dễ sử dụng, phòng tập Gym tại Asia Hotel chắc chắn là điểm đến không thể bỏ qua đối với những Quý khách mong muốn có một tinh thần cũng như một cơ thể khỏe và đẹp."
+		tickertexts10a1 = "Với tiêu chí An toàn - Hiệu quả - Thân thiện - Dễ sử dụng, phòng tập Gym tại Asia Hotel chắc chắn là điểm đến không thể bỏ qua đối với những Quý khách mong muốn có một tinh thần cũng như một cơ thể khỏe và đẹp."
+		group1 = "CỔNG CHÍNH"
+		group2 = "SẢNH TIẾP TÂN"
+		group3 = "QUẦY LƯU NIỆM"
+		group4 = "PHÒNG HỘI THẢO"
+		group5 = "NHÀ HÀNG Á CHÂU"
+		group6 = "HÀNH LANG"
+		group7 = "PHÒNG STANDARD"
+		group8 = "PHÒNG SUPERIOR"
+		group9 = "PHÒNG SUITE"
+		group10 = "PHÒNG GYM"
+	/>
+
+</krpano>

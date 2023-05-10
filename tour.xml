@@ -1,84 +1,35 @@
-﻿<krpano version="1.20.11" title="Hải trình Trường Sa, Đoàn 4, 18-23/04/2023">
+<krpano version="1.20" title="Hai trinh Truong Sa 04 2023" onstart="startup();">
 
 	<include url="skin/vtourskin.xml" />
+	<include url="data.xml" />
 
+	<!-- thay doi con tro va cach di chuyen -->
+	<events onxmlcomplete="action(dragcursor);" />
+	
+	<action name="dragcursor">
+			set(control.mousetype, drag2D);
+			set(cursors.url, %FIRSTXML%/skin/drag-cursors.png);
+			set(cursors.type, drag);
+			set(cursors.move,  2|0|30|32);
+			set(cursors.drag, 37|0|30|32);
+	</action>
+
+	<action name="startup">
+		if(startscene === null, copy(startscene,scene[0].name));
+		if(autoplay === null, set(autoplay, 'false'););
+		if(language === null, set(language, 'vietnamese'););
+		loadscene(get(startscene), null, MERGE);
+		playsound(bgsnd, '%FIRSTXML%/bgsounds/bgsound.mp3|%FIRSTXML%/bgsounds/bgsound.ogg', 0);
+	</action>
+	
 	<autorotate enabled="true"
 				waittime="3.0"
 				accel="1.5"
 				speed="3.0"
 				tofov="120.0"
 	/>
-
-	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
-	<skin_settings maps="false"
-	               maps_type="google"
-	               maps_bing_api_key=""
-	               maps_google_api_key=""
-	               maps_zoombuttons="false"
-	               maps_loadonfirstuse="false"
-	               gyro="false"
-	               gyro_keeplookingdirection="false"
-	               webvr="false"
-	               webvr_keeplookingdirection="false"
-	               webvr_prev_next_hotspots="false"
-	               autotour="false"
-	               littleplanetintro="false"
-	               followmousecontrol="false"
-	               title="true"
-	               thumbs="true"
-	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
-	               thumbs_opened="false"
-	               thumbs_text="false"
-	               thumbs_dragging="true"
-	               thumbs_onhoverscrolling="false"
-	               thumbs_scrollbuttons="false"
-	               thumbs_scrollindicator="false"
-	               thumbs_loop="false"
-	               tooltips_buttons="false"
-	               tooltips_thumbs="false"
-	               tooltips_hotspots="false"
-	               tooltips_mapspots="false"
-	               deeplinking="false"
-	               loadscene_flags="MERGE"
-	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
-	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
-	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
-	               loadingtext=""
-	               layout_width="100%"
-	               layout_maxwidth="814"
-	               controlbar_width="-24"
-	               controlbar_height="40"
-	               controlbar_offset="20"
-	               controlbar_offset_closed="-40"
-	               controlbar_overlap.no-fractionalscaling="10"
-	               controlbar_overlap.fractionalscaling="0"
-	               design_skin_images="vtourskin.png"
-	               design_bgcolor="0x2D3E50"
-	               design_bgalpha="0.8"
-	               design_bgborder="0"
-	               design_bgroundedge="1"
-	               design_bgshadow="0 4 10 0x000000 0.3"
-	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
-	               design_thumbborder_padding="2"
-	               design_thumbborder_bgroundedge="0"
-	               design_text_css="color:#FFFFFF; font-family:Arial;"
-	               design_text_shadow="1"
-	               />
-
-	<!--
-	    For an alternative skin design either change the <skin_settings> values 
-	    from above or optionally include one of the predefined designs from below.
-	-->
-	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
-	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
-	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
-	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
-	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
-	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
-
-
-	
-	<scene name="scene_01_Xuat_phat" title="01 Xuat phat" onstart="" thumburl="panos/01_Xuat_phat.tiles/thumb.jpg" lat="" lng="" heading="">
+				
+	<scene name="scene01" title="Tàu 571 chuẩn bị xuất phát" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/01_Xuat_phat.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -91,19 +42,15 @@
 		</image>
 		
 		<hotspot name="spot1" style="hotspot_ani_white" ath="65" atv="0" 
-		         onclick="loadscene(scene_02_Tren_boong,null,MERGE,BLEND(1));
-		                  set(view.architectural,1.0);
-		                  wait(BLEND);
-		                  tween(view.architectural,0.0,2.0);
-		                  oninterrupt( tween(view.architectural,0.0,0.5) );
-						  set(hotspot[spot2].effect, '');
-		                  "
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene02].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene02,null,MERGE,BLEND(1));"
 		         />	
-		
-
+				 
 	</scene>
 
-	<scene name="scene_02_Tren_boong" title="02 Tren boong" onstart="" thumburl="panos/02_Tren_boong.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene02" title="Trên boong tàu 571" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/02_Tren_boong.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -115,9 +62,22 @@
 			<cube url="panos/02_Tren_boong.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="120" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene03].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene03,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="-100" atv="10" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene01].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene01,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_03_Ra_khoi" title="03 Ra khoi" onstart="" thumburl="panos/03_Ra_khoi.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene03" title="Tàu 571 ra khơi" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/03_Ra_khoi.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -129,9 +89,22 @@
 			<cube url="panos/03_Ra_khoi.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="-50" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene04].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene04,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="-170" atv="15" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene02].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene02,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_04_Roi_tau_ra_Sinh_Ton_Dong" title="04 Roi tau ra Sinh Ton Dong" onstart="" thumburl="panos/04_Roi_tau_ra_Sinh_Ton_Dong.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene04" title="Rời tàu ra đảo Sinh Tồn Đông" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/04_Roi_tau_ra_Sinh_Ton_Dong.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -143,9 +116,22 @@
 			<cube url="panos/04_Roi_tau_ra_Sinh_Ton_Dong.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="-35" atv="2" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene05].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene05,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="115" atv="-12" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene03].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene03,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_05_Tren_tau_ra_Sinh_Ton_Dong" title="05 Tren tau ra Sinh Ton Dong" onstart="" thumburl="panos/05_Tren_tau_ra_Sinh_Ton_Dong.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene05" title="Trên cano ra đảo Sinh Tồn Đông" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/05_Tren_tau_ra_Sinh_Ton_Dong.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -157,9 +143,22 @@
 			<cube url="panos/05_Tren_tau_ra_Sinh_Ton_Dong.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="15" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene06].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene06,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="210" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene04].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene04,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_06_Cap_cang_Sinh_Ton_Dong" title="06 Cap cang Sinh Ton Dong" onstart="" thumburl="panos/06_Cap_cang_Sinh_Ton_Dong.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene06" title="Cập cảng đảo Sinh Tồn Đông" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/06_Cap_cang_Sinh_Ton_Dong.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -171,9 +170,22 @@
 			<cube url="panos/06_Cap_cang_Sinh_Ton_Dong.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="0" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene07].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene07,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="210" atv="2" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene05].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene05,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_07_Cong_chao_Sinh_Ton_Dong" title="07 Cong chao Sinh Ton Dong" onstart="" thumburl="panos/07_Cong_chao_Sinh_Ton_Dong.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene07" title="Cổng chào đảo Sinh Tồn Đông" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/07_Cong_chao_Sinh_Ton_Dong.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -184,10 +196,29 @@
 		<image>
 			<cube url="panos/07_Cong_chao_Sinh_Ton_Dong.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
+		<hotspot name="spot1" style="hotspot_ani_white" ath="-95" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene08].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene08,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="175" atv="5" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene06].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene06,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot3" style="hotspot_ani_white" ath="-10" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene10].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene10,null,MERGE,BLEND(1));"
+		         />	
+
 
 	</scene>
 
-	<scene name="scene_08_Chua_tren_dao_Sinh_Ton_Dong" title="08 Chua tren dao Sinh Ton Dong" onstart="" thumburl="panos/08_Chua_tren_dao_Sinh_Ton_Dong.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene08" title="Chùa trên đảo Sinh Tồn Đông" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/08_Chua_tren_dao_Sinh_Ton_Dong.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -199,9 +230,22 @@
 			<cube url="panos/08_Chua_tren_dao_Sinh_Ton_Dong.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="20" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene07].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene07,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="-18" atv="2" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene09].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene09,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_09_Giao_luu_CBCS_Sinh_Ton_Dong" title="09 Giao luu CBCS Sinh Ton Dong" onstart="" thumburl="panos/09_Giao_luu_CBCS_Sinh_Ton_Dong.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene09" title="Trò truyện cùng CBCS đảo Sinh Tồn Đông" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/09_Giao_luu_CBCS_Sinh_Ton_Dong.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -213,9 +257,22 @@
 			<cube url="panos/09_Giao_luu_CBCS_Sinh_Ton_Dong.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="-15" atv="2" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene08].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene08,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="-155" atv="-2" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene10].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene10,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_10_Cot_moc_chu_quyen_Sinh_Ton_Dong" title="10 Cot moc chu quyen Sinh Ton Dong" onstart="" thumburl="panos/10_Cot_moc_chu_quyen_Sinh_Ton_Dong.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene10" title="Cột mốc chủ quyền đảo Sinh Tồn Đông" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/10_Cot_moc_chu_quyen_Sinh_Ton_Dong.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -227,9 +284,22 @@
 			<cube url="panos/10_Cot_moc_chu_quyen_Sinh_Ton_Dong.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="-90" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene09].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene09,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="175" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene11].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene11,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_11_Roi_tau_ra_Len_Dao" title="11 Roi tau ra Len Dao" onstart="" thumburl="panos/11_Roi_tau_ra_Len_Dao.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene11" title="Rời tàu ra đảo Len Đao" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/11_Roi_tau_ra_Len_Dao.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -241,9 +311,22 @@
 			<cube url="panos/11_Roi_tau_ra_Len_Dao.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="0" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene12].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene12,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="190" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene04].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene04,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_12_Tren_tau_ra_Len_Dao" title="12 Tren tau ra Len Dao" onstart="" thumburl="panos/12_Tren_tau_ra_Len_Dao.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene12" title="Trên cano ra đảo Len Đao" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/12_Tren_tau_ra_Len_Dao.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -255,9 +338,22 @@
 			<cube url="panos/12_Tren_tau_ra_Len_Dao.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="20" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene13].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene13,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="-135" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene11].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene11,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_13_Cap_cang_Len_Dao" title="13 Cap cang Len Dao" onstart="" thumburl="panos/13_Cap_cang_Len_Dao.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene13" title="Cập cảng đảo Len Đao" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/13_Cap_cang_Len_Dao.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -269,9 +365,22 @@
 			<cube url="panos/13_Cap_cang_Len_Dao.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="-110" atv="4" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene12].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene12,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="-20" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene14].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene14,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_14_Tren_dao_Len_Dao_01" title="14 Tren dao Len Dao 01" onstart="" thumburl="panos/14_Tren_dao_Len_Dao_01.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene14" title="Trên đảo Len Đao 01" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/14_Tren_dao_Len_Dao_01.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -283,9 +392,22 @@
 			<cube url="panos/14_Tren_dao_Len_Dao_01.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="-110" atv="-10" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene15].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene15,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="140" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene13].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene13,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_15_Tren_dao_Len_Dao_02" title="15 Tren dao Len Dao 02" onstart="" thumburl="panos/15_Tren_dao_Len_Dao_02.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene15" title="Trên đảo Len Đao 02" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/15_Tren_dao_Len_Dao_02.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -297,9 +419,22 @@
 			<cube url="panos/15_Tren_dao_Len_Dao_02.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="-120" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene16].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene16,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="70" atv="15" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene14].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene14,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_16_Le_tuong_niem_Gac_Ma" title="16 Le tuong niem Gac Ma" onstart="" thumburl="panos/16_Le_tuong_niem_Gac_Ma.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene16" title="Lễ tưởng niệm chiến sĩ Gạc Ma" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/16_Le_tuong_niem_Gac_Ma.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -311,9 +446,22 @@
 			<cube url="panos/16_Le_tuong_niem_Gac_Ma.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="160" atv="30" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene11].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene11,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="170" atv="20" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene17].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene17,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_17_Roi_tau_ra_Da_Tay_B" title="17 Roi tau ra Da Tay B" onstart="" thumburl="panos/17_Roi_tau_ra_Da_Tay_B.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene17" title="Rời tàu ra đảo Đá Tây B" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/17_Roi_tau_ra_Da_Tay_B.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -325,9 +473,22 @@
 			<cube url="panos/17_Roi_tau_ra_Da_Tay_B.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="160" atv="3" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene18].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene18,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="-10" atv="-16" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene16].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene16,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_18_Tren_tau_ra_Da_Tay_B_01" title="18 Tren tau ra Da Tay B 01" onstart="" thumburl="panos/18_Tren_tau_ra_Da_Tay_B_01.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene18" title="Trên cano ra đảo Đá Tây B 01" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/18_Tren_tau_ra_Da_Tay_B_01.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -339,9 +500,22 @@
 			<cube url="panos/18_Tren_tau_ra_Da_Tay_B_01.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="0" atv="2" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene19].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene19,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="200" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene17].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene17,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_19_Tren_tau_ra_Da_Tay_B_02" title="19 Tren tau ra Da Tay B 02" onstart="" thumburl="panos/19_Tren_tau_ra_Da_Tay_B_02.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene19" title="Trên cano ra đảo Đá Tây B 02" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/19_Tren_tau_ra_Da_Tay_B_02.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -353,9 +527,22 @@
 			<cube url="panos/19_Tren_tau_ra_Da_Tay_B_02.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="0" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene20].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene20,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="150" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene18].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene18,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_20_Cap_cang_Da_Tay_B" title="20 Cap cang Da Tay B" onstart="" thumburl="panos/20_Cap_cang_Da_Tay_B.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene20" title="Cập cảng đảo Đá Tây B" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/20_Cap_cang_Da_Tay_B.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -367,9 +554,22 @@
 			<cube url="panos/20_Cap_cang_Da_Tay_B.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="0" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene21].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene21,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="190" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene19].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene19,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_21_Tren_dao_Da_Tay_B_01" title="21 Tren dao Da Tay B 01" onstart="" thumburl="panos/21_Tren_dao_Da_Tay_B_01.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene21" title="Trên đảo Đá Tây B 01" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/21_Tren_dao_Da_Tay_B_01.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -381,9 +581,22 @@
 			<cube url="panos/21_Tren_dao_Da_Tay_B_01.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="145" atv="3" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene22].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene22,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="-100" atv="5" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene20].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene20,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_22_Tren_dao_Da_Tay_B_02" title="22 Tren dao Da Tay B 02" onstart="" thumburl="panos/22_Tren_dao_Da_Tay_B_02.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene22" title="Trên đảo Đá Tây B 02" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/22_Tren_dao_Da_Tay_B_02.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -395,9 +608,22 @@
 			<cube url="panos/22_Tren_dao_Da_Tay_B_02.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="-87" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene23].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene23,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="-50" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene21].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene21,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_23_Dao_Truong_Sa_Lon_nhin_tu_mui_tau" title="23 Dao Truong Sa Lon nhin tu mui tau" onstart="" thumburl="panos/23_Dao_Truong_Sa_Lon_nhin_tu_mui_tau.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene23" title="Đảo Trường Sa nhìn từ mũi tàu 571" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/23_Dao_Truong_Sa_Lon_nhin_tu_mui_tau.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -409,9 +635,22 @@
 			<cube url="panos/23_Dao_Truong_Sa_Lon_nhin_tu_mui_tau.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="102" atv="-12" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene24].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene24,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="75" atv="2" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene17].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene17,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_24_Dao_Truong_Sa_Lon_nhin_tu_buong_lai" title="24 Dao Truong Sa Lon nhin tu buong lai" onstart="" thumburl="panos/24_Dao_Truong_Sa_Lon_nhin_tu_buong_lai.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene24" title="Đảo Trường Sa nhìn từ trước buồng lái" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/24_Dao_Truong_Sa_Lon_nhin_tu_buong_lai.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -423,9 +662,22 @@
 			<cube url="panos/24_Dao_Truong_Sa_Lon_nhin_tu_buong_lai.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="15" atv="6" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene25].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene25,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="0" atv="20" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene23].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene23,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_25_Cap_cang_Truong_Sa_Lon" title="25 Cap cang Truong Sa Lon" onstart="" thumburl="panos/25_Cap_cang_Truong_Sa_Lon.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene25" title="Cập cảng đảo Trường Sa" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/25_Cap_cang_Truong_Sa_Lon.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -437,9 +689,22 @@
 			<cube url="panos/25_Cap_cang_Truong_Sa_Lon.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="86" atv="4" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene26].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene26,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="-40" atv="-20" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene24].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene24,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_26_Cong_chao_Truong_Sa_Lon_01" title="26 Cong chao Truong Sa Lon 01" onstart="" thumburl="panos/26_Cong_chao_Truong_Sa_Lon_01.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene26" title="Cổng chào đảo Trường Sa 01" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/26_Cong_chao_Truong_Sa_Lon_01.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -451,9 +716,22 @@
 			<cube url="panos/26_Cong_chao_Truong_Sa_Lon_01.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="-89" atv="5" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene27].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene27,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="93" atv="3" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene25].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene25,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_27_Cong_chao_Truong_Sa_Lon_02" title="27 Cong chao Truong Sa Lon 02" onstart="" thumburl="panos/27_Cong_chao_Truong_Sa_Lon_02.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene27" title="Cổng chào đảo Trường Sa 02" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/27_Cong_chao_Truong_Sa_Lon_02.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -465,9 +743,22 @@
 			<cube url="panos/27_Cong_chao_Truong_Sa_Lon_02.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="23" atv="3" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene28].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene28,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="210" atv="5" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene26].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene26,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_28_Cong_chao_Truong_Sa_Lon_03" title="28 Cong chao Truong Sa Lon 03" onstart="" thumburl="panos/28_Cong_chao_Truong_Sa_Lon_03.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene28" title="Cổng chào đảo Trường Sa 03" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/28_Cong_chao_Truong_Sa_Lon_03.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -479,9 +770,22 @@
 			<cube url="panos/28_Cong_chao_Truong_Sa_Lon_03.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="180" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene29].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene29,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="5" atv="5" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene27].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene27,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_29_Le_chao_co_tren_Truong_Sa_Lon_01" title="29 Le chao co tren Truong Sa Lon 01" onstart="" thumburl="panos/29_Le_chao_co_tren_Truong_Sa_Lon_01.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene29" title="Lễ chào cờ trên đảo Trường Sa 01" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/29_Le_chao_co_tren_Truong_Sa_Lon_01.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -493,9 +797,52 @@
 			<cube url="panos/29_Le_chao_co_tren_Truong_Sa_Lon_01.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="-20" atv="5" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene30].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene30,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="-85" atv="3" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene28].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene28,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot3" style="hotspot_ani_white" ath="10" atv="-3" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene32].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene32,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot4" style="hotspot_ani_white" ath="-59" atv="3" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene33].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene33,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot5" style="hotspot_ani_white" ath="18" atv="-3" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene31].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene31,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot6" style="hotspot_ani_white" ath="70" atv="-3" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene38].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene38,null,MERGE,BLEND(1));"
+				 />
+		<hotspot name="spot7" style="hotspot_ani_white" ath="160" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene37].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene37,null,MERGE,BLEND(1));"
+				 />
+
 	</scene>
 
-	<scene name="scene_30_Le_chao_co_tren_Truong_Sa_Lon_02" title="30 Le chao co tren Truong Sa Lon 02" onstart="" thumburl="panos/30_Le_chao_co_tren_Truong_Sa_Lon_02.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene30" title="Lễ chào cờ trên đảo Trường Sa 02" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/30_Le_chao_co_tren_Truong_Sa_Lon_02.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -507,9 +854,52 @@
 			<cube url="panos/30_Le_chao_co_tren_Truong_Sa_Lon_02.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 
+		<hotspot name="spot1" style="hotspot_ani_white" ath="20" atv="3" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene29].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene29,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot2" style="hotspot_ani_white" ath="0" atv="-2" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene38].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene38,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot3" style="hotspot_ani_white" ath="60" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene37].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene37,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot4" style="hotspot_ani_white" ath="-60" atv="-2" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene31].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene31,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot5" style="hotspot_ani_white" ath="-70" atv="-2" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene32].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene32,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot6" style="hotspot_ani_white" ath="-155" atv="2" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene33].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene33,null,MERGE,BLEND(1));"
+		         />	
+		<hotspot name="spot7" style="hotspot_ani_white" ath="-190" atv="2" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene28].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene28,null,MERGE,BLEND(1));"
+		         />	
+
 	</scene>
 
-	<scene name="scene_31_Nha_tuong_niem_tren_Truong_Sa_Lon" title="31 Nha tuong niem tren Truong Sa Lon" onstart="" thumburl="panos/31_Nha_tuong_niem_tren_Truong_Sa_Lon.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene31" title="Nhà tưởng niệm Bác Hồ đảo Trường Sa" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/31_Nha_tuong_niem_tren_Truong_Sa_Lon.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -523,7 +913,7 @@
 
 	</scene>
 
-	<scene name="scene_32_Bia_tuong_niem_tren_Truong_Sa_Lon" title="32 Bia tuong niem tren Truong Sa Lon" onstart="" thumburl="panos/32_Bia_tuong_niem_tren_Truong_Sa_Lon.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene32" title="Bia tưởng niệm trên đảo Trường Sa" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/32_Bia_tuong_niem_tren_Truong_Sa_Lon.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -537,7 +927,7 @@
 
 	</scene>
 
-	<scene name="scene_33_Cong_chua_Truong_Sa_Lon" title="33 Cong chua Truong Sa Lon" onstart="" thumburl="panos/33_Cong_chua_Truong_Sa_Lon.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene33" title="Cổng chùa đảo Trường Sa" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/33_Cong_chua_Truong_Sa_Lon.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -551,7 +941,7 @@
 
 	</scene>
 
-	<scene name="scene_34_Lam_le_ben_trong_chua_01" title="34 Lam le ben trong chua 01" onstart="" thumburl="panos/34_Lam_le_ben_trong_chua_01.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene34" title="Làm lễ bên trong chùa Trường Sa 01" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/34_Lam_le_ben_trong_chua_01.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -565,7 +955,7 @@
 
 	</scene>
 
-	<scene name="scene_35_Lam_le_ben_trong_chua_02" title="35 Lam le ben trong chua 02" onstart="" thumburl="panos/35_Lam_le_ben_trong_chua_02.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene35" title="Làm lễ bên trong chùa Trường Sa 02" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/35_Lam_le_ben_trong_chua_02.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -579,7 +969,7 @@
 
 	</scene>
 
-	<scene name="scene_36_Lam_le_ben_trong_chua_03" title="36 Lam le ben trong chua 03" onstart="" thumburl="panos/36_Lam_le_ben_trong_chua_03.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene36" title="Làm lễ bên trong chùa Trường Sa 03" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/36_Lam_le_ben_trong_chua_03.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -593,7 +983,7 @@
 
 	</scene>
 
-	<scene name="scene_37_Nha_ga_hang_khong_Truong_Sa_Lon" title="37 Nha ga hang khong Truong Sa Lon" onstart="" thumburl="panos/37_Cang_hang_khong_Truong_Sa_Lon.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene37" title="Nhà ga hàng không đảo Trường Sa" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/37_Cang_hang_khong_Truong_Sa_Lon.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -607,7 +997,7 @@
 
 	</scene>
 
-	<scene name="scene_38_Cot_moc_chu_quyen_Truong_Sa_Lon" title="38 Cot moc chu quyen Truong Sa Lon" onstart="" thumburl="panos/38_Cot_moc_chu_quyen_Truong_Sa_Lon.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene38" title="Cột mốc chủ quyền đảo Trường Sa" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/38_Cot_moc_chu_quyen_Truong_Sa_Lon.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -621,7 +1011,7 @@
 
 	</scene>
 
-	<scene name="scene_39_Nha_gian_DKI-16_nhin_tu_boong_tau" title="39 Nha gian DKI-16 nhin tu boong tau" onstart="" thumburl="panos/39_Nha_gian_DKI-16_nhin_tu_boong_tau.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene39" title="Nhà giàn DKI-16 nhìn từ boong tàu" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/39_Nha_gian_DKI-16_nhin_tu_boong_tau.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -635,7 +1025,7 @@
 
 	</scene>
 
-	<scene name="scene_40_Roi_tau_ra_Nha_gian_DKI-16" title="40 Roi tau ra Nha gian DKI-16" onstart="" thumburl="panos/40_Roi_tau_ra_Nha_gian_DKI-16.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene40" title="Rời tàu ra Nhà giàn DKI-16" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/40_Roi_tau_ra_Nha_gian_DKI-16.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -649,7 +1039,7 @@
 
 	</scene>
 
-	<scene name="scene_41_Tren_tau_ra_Nha_gian_DKI-16" title="41 Tren tau ra Nha gian DKI-16" onstart="" thumburl="panos/41_Tren_tau_ra_Nha_gian_DKI-16.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene41" title="Trên cano ra Nhà giàn DKI-16" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/41_Tren_tau_ra_Nha_gian_DKI-16.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -663,7 +1053,7 @@
 
 	</scene>
 
-	<scene name="scene_42_Tang_1_Nha_gian_DKI-16" title="42 Tang 1 Nha gian DKI-16" onstart="" thumburl="panos/42_Tang_1_Nha_gian_DKI-16.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene42" title="Cảng Nhà giàn DKI-16" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/42_Tang_1_Nha_gian_DKI-16.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -677,7 +1067,7 @@
 
 	</scene>
 
-	<scene name="scene_43_Nha_gian_DKI-16_01" title="43 Nha gian DKI-16 01" onstart="" thumburl="panos/43_Nha_gian_DKI-16_01.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene43" title="Nhà giàn DKI-16 01" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/43_Nha_gian_DKI-16_01.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -691,7 +1081,7 @@
 
 	</scene>
 
-	<scene name="scene_44_Nha_gian_DKI-16_02" title="44 Nha gian DKI-16 02" onstart="" thumburl="panos/44_Nha_gian_DKI-16_02.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene44" title="Nhà giàn DKI-16 02" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/44_Nha_gian_DKI-16_02.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -704,6 +1094,5 @@
 		</image>
 
 	</scene>
-
-
+				
 </krpano>
