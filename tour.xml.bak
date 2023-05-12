@@ -647,6 +647,12 @@
 		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
 						  loadscene(scene17,null,MERGE,BLEND(1));"
 		         />	
+		<hotspot name="spot3" style="hotspot_ani_white" ath="-40" atv="0" 
+				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene25].title)); set(autorotate.enabled, 'false');"
+				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
+		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
+						  loadscene(scene25,null,MERGE,BLEND(1));"
+		         />	
 
 	</scene>
 
@@ -1328,7 +1334,7 @@
 		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
 						  loadscene(scene01,null,MERGE,BLEND(1));"
 		         />	
-		<hotspot name="spot3" style="hotspot_ani_white" ath="-14" atv="14" 
+		<hotspot name="spot3" style="hotspot_ani_white" ath="-12" atv="16" 
 				 onhover="hieninfo(); set(layer[tooltip].html, get(scene[scene42].title)); set(autorotate.enabled, 'false');"
 				 onout="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');"
 		         onclick="tween(layer[tooltip].alpha, 0.0, 0.25, default); set(autorotate.enabled, 'true'); set(layer[tooltip].ox, '0');
