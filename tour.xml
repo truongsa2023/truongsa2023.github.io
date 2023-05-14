@@ -1169,7 +1169,7 @@
 
 	</scene>
 
-	<scene name="scene39" title="Nhà giàn DKI-16 nhìn từ boong tàu" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/39_Nha_gian_DKI-16_nhin_tu_boong_tau.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene39" title="Nhà giàn DK1-16 nhìn từ boong tàu" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/39_Nha_gian_DKI-16_nhin_tu_boong_tau.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1196,7 +1196,7 @@
 
 	</scene>
 
-	<scene name="scene40" title="Rời tàu ra Nhà giàn DKI-16" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/40_Roi_tau_ra_Nha_gian_DKI-16.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene40" title="Rời tàu ra Nhà giàn DK1-16" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/40_Roi_tau_ra_Nha_gian_DKI-16.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1223,7 +1223,7 @@
 
 	</scene>
 
-	<scene name="scene41" title="Trên cano ra Nhà giàn DKI-16" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/41_Tren_tau_ra_Nha_gian_DKI-16.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene41" title="Trên cano ra Nhà giàn DK1-16" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/41_Tren_tau_ra_Nha_gian_DKI-16.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1256,7 +1256,7 @@
 
 	</scene>
 
-	<scene name="scene42" title="Cảng Nhà giàn DKI-16" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/42_Tang_1_Nha_gian_DKI-16.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene42" title="Cảng Nhà giàn DK1-16" onstart="set(layer[scenetitle].html, get(scene[get(xml.scene)].title));" thumburl="panos/42_Tang_1_Nha_gian_DKI-16.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 

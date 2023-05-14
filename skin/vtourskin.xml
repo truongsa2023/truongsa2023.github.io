@@ -295,7 +295,7 @@
 					   align="center"
 					   bg="false"
 					   css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:13px;"
-					   html="Nhà giàn DKI-16"
+					   html="Nhà giàn DK1-16"
 					   onclick="loadscene(scene39,null,MERGE,BLEND(1));"
 					   />
 				</layer>
