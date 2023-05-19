@@ -107,15 +107,49 @@
 		delayedcall(0.05, if(loaded, hotspot_animate() ) );
 	</action>
 
-	<action name="hieninfo">
-		sub(c, mouse.stagex, 0);
-		add(d, mouse.stagey, -35);
-		set(layer[tooltip].align, "lefttop");
-		set(layer[tooltip].ox, '-50%');
-		copy(layer[tooltip].x, c); 
-		copy(layer[tooltip].y, d); 
-        set(layer[tooltip].visible, true);
-        tween(layer[tooltip].alpha, 1.0, 0.5);
+	<action name="hieninfo1">
+		txtadd(plugin[tooltip1].parent, 'hotspot[', %1, ']'); 
+        set(layer[tooltip1].visible, true);
+        tween(layer[tooltip1].alpha, 1.0, 0.5);
+	</action>
+	<action name="hieninfo2">
+		txtadd(plugin[tooltip2].parent, 'hotspot[', %1, ']'); 
+        set(layer[tooltip2].visible, true);
+        tween(layer[tooltip2].alpha, 1.0, 0.5);
+	</action>
+	<action name="hieninfo3">
+		txtadd(plugin[tooltip3].parent, 'hotspot[', %1, ']'); 
+        set(layer[tooltip3].visible, true);
+        tween(layer[tooltip3].alpha, 1.0, 0.5);
+	</action>
+	<action name="hieninfo4">
+		txtadd(plugin[tooltip4].parent, 'hotspot[', %1, ']'); 
+        set(layer[tooltip4].visible, true);
+        tween(layer[tooltip4].alpha, 1.0, 0.5);
+	</action>
+	<action name="hieninfo5">
+		txtadd(plugin[tooltip5].parent, 'hotspot[', %1, ']'); 
+        set(layer[tooltip5].visible, true);
+        tween(layer[tooltip5].alpha, 1.0, 0.5);
+	</action>
+	<action name="hieninfo6">
+		txtadd(plugin[tooltip6].parent, 'hotspot[', %1, ']'); 
+        set(layer[tooltip6].visible, true);
+        tween(layer[tooltip6].alpha, 1.0, 0.5);
+	</action>
+	<action name="hieninfo7">
+		txtadd(plugin[tooltip7].parent, 'hotspot[', %1, ']'); 
+        set(layer[tooltip7].visible, true);
+        tween(layer[tooltip7].alpha, 1.0, 0.5);
+	</action>
+	<action name="aninfo">
+        set(layer[tooltip1].visible, false);
+        set(layer[tooltip2].visible, false);
+        set(layer[tooltip3].visible, false);
+        set(layer[tooltip4].visible, false);
+        set(layer[tooltip5].visible, false);
+        set(layer[tooltip6].visible, false);
+        set(layer[tooltip7].visible, false);
 	</action>
 
 
@@ -123,9 +157,25 @@
 	<layer name="tooltip" keep="true"
 	       url="%FIRSTXML%/plugins/textfield.swf"
 	       parent=""
-	       visible="false" alpha="0"
+	       visible="false"
 	       enabled="false"
-	       oy="-2"
+	       autowidth="true"
+	       autoheight="true"
+	       background="true" backgroundcolor="0x2D3E50" backgroundalpha="0.8"
+	       border="true" bordercolor="0xffffff" borderalpha="0"
+	       borderwidth="1.0" roundedge="1"
+	       shadow="0.0" shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.7"
+	       textshadow="1" textshadowrange="6.0" textshadowangle="90" textshadowcolor="0x000000" textshadowalpha="1.0"
+	       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:13px;"
+	       html=""
+	       />
+	<layer name="tooltip1" keep="true"
+	       url="%FIRSTXML%/plugins/textfield.swf"
+	       parent=""
+	       visible="false"
+	       enabled="false"
+	       y="-36"
+		   align="center"
 	       autowidth="true"
 	       autoheight="true"
 	       background="true" backgroundcolor="0x2D3E50" backgroundalpha="0.8"
@@ -137,6 +187,113 @@
 	       html=""
 	       />
 
+	<layer name="tooltip2" keep="true"
+	       url="%FIRSTXML%/plugins/textfield.swf"
+	       parent=""
+	       visible="false"
+	       enabled="false"
+	       y="-36"
+		   align="center"
+	       autowidth="true"
+	       autoheight="true"
+	       background="true" backgroundcolor="0x2D3E50" backgroundalpha="0.8"
+	       border="true" bordercolor="0xffffff" borderalpha="0"
+	       borderwidth="1.0" roundedge="1"
+	       shadow="0.0" shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.7"
+	       textshadow="1" textshadowrange="6.0" textshadowangle="90" textshadowcolor="0x000000" textshadowalpha="1.0"
+	       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:13px;"
+	       html=""
+	       />
+	
+	<layer name="tooltip3" keep="true"
+	       url="%FIRSTXML%/plugins/textfield.swf"
+	       parent=""
+	       visible="false"
+	       enabled="false"
+	       y="-36"
+		   align="center"
+	       autowidth="true"
+	       autoheight="true"
+	       background="true" backgroundcolor="0x2D3E50" backgroundalpha="0.8"
+	       border="true" bordercolor="0xffffff" borderalpha="0"
+	       borderwidth="1.0" roundedge="1"
+	       shadow="0.0" shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.7"
+	       textshadow="1" textshadowrange="6.0" textshadowangle="90" textshadowcolor="0x000000" textshadowalpha="1.0"
+	       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:13px;"
+	       html=""
+	       />
+
+	<layer name="tooltip4" keep="true"
+	       url="%FIRSTXML%/plugins/textfield.swf"
+	       parent=""
+	       visible="false"
+	       enabled="false"
+	       y="-36"
+		   align="center"
+	       autowidth="true"
+	       autoheight="true"
+	       background="true" backgroundcolor="0x2D3E50" backgroundalpha="0.8"
+	       border="true" bordercolor="0xffffff" borderalpha="0"
+	       borderwidth="1.0" roundedge="1"
+	       shadow="0.0" shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.7"
+	       textshadow="1" textshadowrange="6.0" textshadowangle="90" textshadowcolor="0x000000" textshadowalpha="1.0"
+	       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:13px;"
+	       html=""
+	       />
+	
+	<layer name="tooltip5" keep="true"
+	       url="%FIRSTXML%/plugins/textfield.swf"
+	       parent=""
+	       visible="false"
+	       enabled="false"
+	       y="-36"
+		   align="center"
+	       autowidth="true"
+	       autoheight="true"
+	       background="true" backgroundcolor="0x2D3E50" backgroundalpha="0.8"
+	       border="true" bordercolor="0xffffff" borderalpha="0"
+	       borderwidth="1.0" roundedge="1"
+	       shadow="0.0" shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.7"
+	       textshadow="1" textshadowrange="6.0" textshadowangle="90" textshadowcolor="0x000000" textshadowalpha="1.0"
+	       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:13px;"
+	       html=""
+	       />
+
+	<layer name="tooltip6" keep="true"
+	       url="%FIRSTXML%/plugins/textfield.swf"
+	       parent=""
+	       visible="false"
+	       enabled="false"
+	       y="-36"
+		   align="center"
+	       autowidth="true"
+	       autoheight="true"
+	       background="true" backgroundcolor="0x2D3E50" backgroundalpha="0.8"
+	       border="true" bordercolor="0xffffff" borderalpha="0"
+	       borderwidth="1.0" roundedge="1"
+	       shadow="0.0" shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.7"
+	       textshadow="1" textshadowrange="6.0" textshadowangle="90" textshadowcolor="0x000000" textshadowalpha="1.0"
+	       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:13px;"
+	       html=""
+	       />
+
+	<layer name="tooltip7" keep="true"
+	       url="%FIRSTXML%/plugins/textfield.swf"
+	       parent=""
+	       visible="false"
+	       enabled="false"
+	       y="-36"
+		   align="center"
+	       autowidth="true"
+	       autoheight="true"
+	       background="true" backgroundcolor="0x2D3E50" backgroundalpha="0.8"
+	       border="true" bordercolor="0xffffff" borderalpha="0"
+	       borderwidth="1.0" roundedge="1"
+	       shadow="0.0" shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.7"
+	       textshadow="1" textshadowrange="6.0" textshadowangle="90" textshadowcolor="0x000000" textshadowalpha="1.0"
+	       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:13px;"
+	       html=""
+	       />
 
 	<!-- Hiển thị tên của cảnh ở góc dưới bên trái và nội dung giới thiệu -->
 	<layer name="scenetitle" keep="true"
@@ -240,7 +397,7 @@
 					   align="center"
 					   bg="false"
 					   css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:13px;"
-					   html="Lễ tưởng niệm Gạc Ma"
+					   html="Lễ tưởng niệm"
 					   onclick="loadscene(scene16,null,MERGE,BLEND(1));"
 					   />
 				</layer>
