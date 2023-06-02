@@ -25,7 +25,7 @@
 	<autorotate enabled="true"
 				waittime="3.0"
 				accel="1.5"
-				speed="3.0"
+				speed="4.0"
 				tofov="120.0"
 	/>
 				
